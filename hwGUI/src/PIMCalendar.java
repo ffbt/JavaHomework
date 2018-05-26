@@ -33,7 +33,7 @@ public class PIMCalendar extends JFrame
             @Override
             public void windowClosing(WindowEvent e)
             {
-                ((RemotePIMCollectionWithFile)remotePIMCollection).write();
+                ((RemotePIMCollectionWithFile) remotePIMCollection).write();
                 System.exit(0);
             }
         });
@@ -175,8 +175,7 @@ class AddPIMEntityActionListener implements ActionListener
         }
         pimEntity.setOwner(user == null ? null : user.getUsername());
         remotePIMCollection.add(pimEntity);
-
-        new EditPIMEntityFrame(entity, pimEntity);
+        new EditPIMEntityFrame(entity, pimEntity, pimCalendar.getCalendarPanel());
     }
 }
 

@@ -37,6 +37,7 @@ public class ShowPIMEntityPanel extends JPanel
 
     public void reset()
     {
+        index = 0;
         this.removeAll();
         this.set();
     }
@@ -84,7 +85,7 @@ public class ShowPIMEntityPanel extends JPanel
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                new EditPIMEntityFrame(entity, list.get(index));
+                new EditPIMEntityFrame(entity, list.get(index), null);
             }
         });
 

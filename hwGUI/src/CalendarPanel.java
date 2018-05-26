@@ -10,7 +10,8 @@ import java.util.Calendar;
  */
 public class CalendarPanel extends JPanel
 {
-    private final static String[] DAYS = {"Sunday",
+    private final static String[] DAYS = {
+            "Sunday",
             "Monday",
             "Tuesday",
             "Wednesday",
@@ -95,7 +96,7 @@ public class CalendarPanel extends JPanel
                 pimCollection = remotePIMCollection.getItemsForDate(calendarTmp.getTime(), user.getUsername());
             for (Object object : pimCollection)
                 stringBuilder.append(object.toString());
-            showPanel.add(new DateCell(calendarTmp, stringBuilder.toString(), calendarTmp.get(Calendar.MONTH) == month, pimCollection, remotePIMCollection, user));
+            showPanel.add(new DateCell(calendarTmp, stringBuilder.toString(), calendarTmp.get(Calendar.MONTH) == month, pimCollection, remotePIMCollection, user, this));
             calendarTmp.add(Calendar.DATE, 1);
         }
     }
@@ -121,7 +122,7 @@ public class CalendarPanel extends JPanel
 
 class DateCell extends JPanel
 {
-    public DateCell(Calendar calendar, String text, boolean currentMonth, PIMCollection pimCollection, RemotePIMCollection remotePIMCollection, User user)
+    public DateCell(Calendar calendar, String text, boolean currentMonth, PIMCollection pimCollection, RemotePIMCollection remotePIMCollection, User user, CalendarPanel calendarPanel)
     {
         super(new BorderLayout());
         JTextField titleTextField = new TitleTextField((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
@@ -136,14 +137,15 @@ class DateCell extends JPanel
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                new InfoFrame(e.getXOnScreen(), e.getYOnScreen(), pimCollection, calendarTmp, remotePIMCollection, user);
+                new InfoFrame(e.getXOnScreen(), e.getYOnScreen(), pimCollection, calendarTmp, remotePIMCollection, user, calendarPanel);
             }
         });
         if (!currentMonth)
             infoTextArea.setBackground(Color.LIGHT_GRAY);
 
         this.add(titleTextField, BorderLayout.NORTH);
-        this.add(infoTextArea, BorderLayout.CENTER);
+//        this.add(infoTextArea, BorderLayout.CENTER);
+        this.add(new JScrollPane(infoTextArea), BorderLayout.CENTER);
     }
 }
 
@@ -172,12 +174,15 @@ class InfoTextArea extends JTextArea
 
 class InfoFrame extends JFrame
 {
-    public InfoFrame(int x, int y, PIMCollection pimCollection, Calendar calendar, RemotePIMCollection remotePIMCollection, User user)
-    {
-        super((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
+    private static final String[] pimEntityStrings = {"todos", "notes", "contacts", "appointments"};
+    private PIMCollection pimCollection;
+    private JPanel showPanel = new JPanel();
+    private CalendarPanel calendarPanel;
 
+    private void set()
+    {
         int textAreaNum = pimCollection.size();
-        JPanel showPanel = new JPanel(new GridLayout(textAreaNum, 1));
+        showPanel.setLayout(new GridLayout(textAreaNum, 1));
 
         for (Object o : pimCollection)
         {
@@ -187,31 +192,39 @@ class InfoFrame extends JFrame
                 @Override
                 public void mouseClicked(MouseEvent e)
                 {
-                    // TODO: 2018/5/6 刷新
                     if (o instanceof PIMTodo)
-                        new EditPIMEntityFrame("todos", o);
+                        new EditPIMEntityFrame("todos", o, calendarPanel);
                     else
-                        new EditPIMEntityFrame("appointments", o);
+                        new EditPIMEntityFrame("appointments", o, calendarPanel);
                 }
             });
             showPanel.add(infoTextArea);
         }
+    }
 
-        JPanel optionPanel = new JPanel();
+    public void reset()
+    {
+        showPanel.removeAll();
+        set();
+    }
+
+    public InfoFrame(int x, int y, PIMCollection pimCollection, Calendar calendar, RemotePIMCollection remotePIMCollection, User user, CalendarPanel calendarPanel)
+    {
+        super((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
+        this.pimCollection = pimCollection;
+        this.calendarPanel = calendarPanel;
+
+        set();
+
+        JPanel optionPanel = new JPanel(new GridLayout(1, 2));
         optionPanel.setPreferredSize(new Dimension(this.getWidth(), 30));
 
-        JButton addButton = new JButton("add");
-        addButton.addMouseListener(new MouseAdapter()
-        {
-            @Override
-            public void mouseClicked(MouseEvent e)
-            {
-                // TODO: 2018/5/6 刷新
-                new AddPIMEntityFrame(calendar, remotePIMCollection, user);
-            }
-        });
+        JLabel addLabel = new JLabel("add");
 
-        optionPanel.add(addButton);
+        JComboBox comboBox = getJComboBox(calendar, remotePIMCollection, user, calendarPanel, pimCollection);
+
+        optionPanel.add(addLabel);
+        optionPanel.add(comboBox);
 
         this.add(optionPanel, BorderLayout.SOUTH);
         this.add(showPanel, BorderLayout.CENTER);
@@ -227,5 +240,45 @@ class InfoFrame extends JFrame
         this.setLocation(x, y);
         this.setVisible(true);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    // 只关闭该frame
+    }
+
+    private JComboBox getJComboBox(Calendar calendar, RemotePIMCollection remotePIMCollection, User user, CalendarPanel calendarPanel, PIMCollection pimCollection)
+    {
+        if (calendar == null)
+            calendar = Calendar.getInstance();
+
+        final Calendar calendarFinal = calendar;
+
+        JComboBox comboBox = new JComboBox(pimEntityStrings);
+        comboBox.addActionListener(e ->
+        {
+            PIMEntity pimEntity = null;
+            String entity = ((JComboBox) e.getSource()).getSelectedItem().toString();
+            switch (entity)
+            {
+                case "todos":
+                    pimEntity = new PIMTodo();
+                    ((PIMTodo) pimEntity).setDate(calendarFinal.getTime());
+                    break;
+                case "notes":
+                    pimEntity = new PIMNote();
+                    break;
+                case "contacts":
+                    pimEntity = new PIMContact();
+                    break;
+                case "appointments":
+                    pimEntity = new PIMAppointment();
+                    ((PIMAppointment) pimEntity).setDate(calendarFinal.getTime());
+                    break;
+                default:
+                    break;
+            }
+            pimEntity.setOwner(user == null ? null : user.getUsername());
+            remotePIMCollection.add(pimEntity);
+            pimCollection.add(pimEntity);
+            EditPIMEntityFrame editPIMEntityFrame = new EditPIMEntityFrame(entity, pimEntity, calendarPanel);
+            editPIMEntityFrame.setInfoFrame((InfoFrame) this.getRootPane().getParent());
+        });
+        return comboBox;
     }
 }

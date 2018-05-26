@@ -1,52 +1,28 @@
-import java.util.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class Test
+public class Test implements Serializable
 {
     public static void main(String[] args)
     {
-        List<Student> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
+        Calendar calendar = Calendar.getInstance();
+        String string = "a\\b\\c";
+        String string1 = "192.168.1.1";
+        String[] strings = string.split("\\\\");
+        String[] strings1 = string1.split("\\.");
+        for (int i = 0; i < strings1.length; i++)
         {
-            Student student = new Student();
-            student.setId(i);
-            student.setName("name" + i);
-            list.add(student);
+            String s = strings1[i];
+            System.out.println(s);
         }
-        LinkedList<Student> linkedList = new LinkedList<>();
-        for (Student student : list)
+        for (int i = 0; i < strings.length; i++)
         {
-            linkedList.add(student);
+            String s = strings[i];
+            System.out.println(s);
         }
-        linkedList.get(5).setName("name11");
-        for (Student student : list)
-        {
-            System.out.println(student.getId() + " " + student.getName());
-        }
-    }
-}
-
-class Student
-{
-    int id;
-    String name;
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
     }
 }

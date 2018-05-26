@@ -10,6 +10,7 @@ public class PIMEntityPanel extends JPanel
 {
     private String entity;
     private PIMEntity pimEntity;
+    private CalendarPanel calendarPanel;
     private JPanel entityShowPanel = new JPanel(new GridLayout(7, 2));
 
     public String getEntity()
@@ -27,11 +28,17 @@ public class PIMEntityPanel extends JPanel
         return entityShowPanel;
     }
 
-    public PIMEntityPanel(String entity, Object object)
+    public CalendarPanel getCalendarPanel()
+    {
+        return calendarPanel;
+    }
+
+    public PIMEntityPanel(String entity, Object object, CalendarPanel calendarPanel)
     {
         super(new BorderLayout());
         this.entity = entity;
         this.pimEntity = (PIMEntity) object;
+        this.calendarPanel = calendarPanel;
 
         setCommonShowPanel();
 
@@ -193,6 +200,14 @@ class SaveMouseAdapter extends MouseAdapter
                 break;
             default:
                 break;
+        }
+        CalendarPanel calendarPanel = pimEntityPanel.getCalendarPanel();
+        if (calendarPanel != null)
+        {
+            calendarPanel.reset(0);
+            JRootPane rootPane = pimEntityPanel.getCalendarPanel().getRootPane();
+            if (rootPane != null)
+                rootPane.getParent().validate();
         }
         ((JFrame) ((JButton) e.getSource()).getRootPane().getParent()).dispose();
     }

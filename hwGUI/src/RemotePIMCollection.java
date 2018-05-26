@@ -14,5 +14,6 @@ public interface RemotePIMCollection
     PIMCollection getItemsForDate(Date d, String owner);
     PIMCollection getAll();
     PIMCollection getAllByOwner(String owner);
+    void remove(Object object);
     boolean add(PIMEntity pimEntity);
 }

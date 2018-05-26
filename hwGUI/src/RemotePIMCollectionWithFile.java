@@ -182,4 +182,10 @@ public class RemotePIMCollectionWithFile implements RemotePIMCollection
         pimCollection.add(pimEntity);
         return true;
     }
+
+    @Override
+    public void remove(Object object)
+    {
+        pimCollection.remove(object);
+    }
 }
