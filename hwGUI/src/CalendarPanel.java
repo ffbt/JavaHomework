@@ -178,6 +178,8 @@ class InfoFrame extends JFrame
     private PIMCollection pimCollection;
     private JPanel showPanel = new JPanel();
     private CalendarPanel calendarPanel;
+    private RemotePIMCollection remotePIMCollection;
+    private JScrollPane scrollPane = new JScrollPane(showPanel);
 
     private void set()
     {
@@ -187,15 +189,37 @@ class InfoFrame extends JFrame
         for (Object o : pimCollection)
         {
             JTextArea infoTextArea = new InfoTextArea(o.toString());
+            JPopupMenu popupMenu = new JPopupMenu();
+            JMenuItem menuItem = new JMenuItem("delete");
+            InfoFrame infoFrame = this;
+            menuItem.addActionListener(e ->
+            {
+                pimCollection.remove(o);
+                remotePIMCollection.remove(o);
+                reset();
+                infoFrame.validate();
+                calendarPanel.reset(0);
+                calendarPanel.getRootPane().getParent().validate();
+            });
+            popupMenu.add(menuItem);
             infoTextArea.addMouseListener(new MouseAdapter()
             {
                 @Override
                 public void mouseClicked(MouseEvent e)
                 {
-                    if (o instanceof PIMTodo)
-                        new EditPIMEntityFrame("todos", o, calendarPanel);
-                    else
-                        new EditPIMEntityFrame("appointments", o, calendarPanel);
+                    if (e.getButton() == MouseEvent.BUTTON1)
+                    {
+                        if (o instanceof PIMTodo)
+                            new EditPIMEntityFrame("todos", o, calendarPanel);
+                        else
+                            new EditPIMEntityFrame("appointments", o, calendarPanel);
+                    }
+                    else if (e.getButton() == MouseEvent.BUTTON3)
+                    {
+//                        popupMenu.setLocation(e.getX(), e.getY());
+//                        popupMenu.setVisible(true);
+                        popupMenu.show((JTextArea)e.getSource(), e.getX(), e.getY());
+                    }
                 }
             });
             showPanel.add(infoTextArea);
@@ -213,6 +237,7 @@ class InfoFrame extends JFrame
         super((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
         this.pimCollection = pimCollection;
         this.calendarPanel = calendarPanel;
+        this.remotePIMCollection = remotePIMCollection;
 
         set();
 
@@ -227,7 +252,7 @@ class InfoFrame extends JFrame
         optionPanel.add(comboBox);
 
         this.add(optionPanel, BorderLayout.SOUTH);
-        this.add(showPanel, BorderLayout.CENTER);
+        this.add(scrollPane, BorderLayout.CENTER);
 
         this.setSize(400, 300);
 
