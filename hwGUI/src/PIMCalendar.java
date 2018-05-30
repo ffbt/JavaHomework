@@ -132,7 +132,7 @@ class ShowPIMEntityActionListener implements ActionListener
         ShowPIMEntityPanel showPIMEntityPanel = pimCalendar.getShowPIMEntityPanel();
         showPIMEntityPanel.setEntity(e.getActionCommand());
         pimCalendar.add(showPIMEntityPanel);
-        showPIMEntityPanel.reset();
+        showPIMEntityPanel.reset(0);
         pimCalendar.validate();
     }
 }
@@ -220,7 +220,7 @@ class PIMToolBar extends JToolBar
                 JLabel usernameLabel = new JLabel("username");
                 JLabel passwordLabel = new JLabel("password");
                 JTextField usernameTextField = new JTextField();
-                JTextField passwordTextField = new JTextField();
+                JTextField passwordTextField = new JPasswordField();
 
                 loginPanel.add(usernameLabel);
                 loginPanel.add(usernameTextField);
@@ -238,6 +238,7 @@ class PIMToolBar extends JToolBar
                     {
                         String username = usernameTextField.getText();
                         String password = passwordTextField.getText();
+//                        System.out.println(password);
                         User user = User.verify(username, password);
                         pimCalendar.setUser(user);
                         ((JFrame) ((JButton) e.getSource()).getRootPane().getParent()).dispose();

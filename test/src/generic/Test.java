@@ -1,5 +1,7 @@
 package generic;
 
+import exam.Leaf;
+
 public class Test
 {
     public static void main(String[] args)
@@ -35,8 +37,6 @@ public class Test
         d = (D)supd.get();
         supd.set(new E());
         Object o = supd.get();
-
-
     }
 }
 

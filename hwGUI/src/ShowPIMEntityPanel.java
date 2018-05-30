@@ -21,7 +21,7 @@ public class ShowPIMEntityPanel extends JPanel
     {
         this.user = user;
         if (this.getRootPane() != null)
-            this.reset();
+            this.reset(0);
     }
 
     public void setEntity(String entity)
@@ -35,9 +35,9 @@ public class ShowPIMEntityPanel extends JPanel
         this.remotePIMCollection = remotePIMCollection;
     }
 
-    public void reset()
+    public void reset(int index)
     {
-        index = 0;
+        this.index = index;
         this.removeAll();
         this.set();
     }
@@ -80,12 +80,31 @@ public class ShowPIMEntityPanel extends JPanel
         JTextArea infoTextArea = new InfoTextArea("");
         if (size != 0)
             infoTextArea.setText(list.get(index).toString());
+
+        JPopupMenu popupMenu = new JPopupMenu();
+        JMenuItem menuItem = new JMenuItem("delete");
+        menuItem.addActionListener(e ->
+        {
+            remotePIMCollection.remove(list.get(index));
+            reset(index);
+            this.getRootPane().getParent().validate();
+        });
+        popupMenu.add(menuItem);
         infoTextArea.addMouseListener(new MouseAdapter()
         {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                new EditPIMEntityFrame(entity, list.get(index), null);
+                if (e.getButton() == MouseEvent.BUTTON1)
+                {
+                    new EditPIMEntityFrame(entity, list.get(index), null);
+                }
+                else if (e.getButton() == MouseEvent.BUTTON3)
+                {
+//                        popupMenu.setLocation(e.getX(), e.getY());
+//                        popupMenu.setVisible(true);
+                    popupMenu.show((JTextArea)e.getSource(), e.getX(), e.getY());
+                }
             }
         });
 
