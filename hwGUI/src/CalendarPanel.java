@@ -209,16 +209,18 @@ class InfoFrame extends JFrame
                 {
                     if (e.getButton() == MouseEvent.BUTTON1)
                     {
+                        EditPIMEntityFrame editPIMEntityFrame;
                         if (o instanceof PIMTodo)
-                            new EditPIMEntityFrame("todos", o, calendarPanel);
+                            editPIMEntityFrame = new EditPIMEntityFrame("todos", o, calendarPanel);
                         else
-                            new EditPIMEntityFrame("appointments", o, calendarPanel);
+                            editPIMEntityFrame = new EditPIMEntityFrame("appointments", o, calendarPanel);
+                        editPIMEntityFrame.setInfoFrame((InfoFrame) ((JTextArea) e.getSource()).getRootPane().getParent());
                     }
                     else if (e.getButton() == MouseEvent.BUTTON3)
                     {
 //                        popupMenu.setLocation(e.getX(), e.getY());
 //                        popupMenu.setVisible(true);
-                        popupMenu.show((JTextArea)e.getSource(), e.getX(), e.getY());
+                        popupMenu.show((JTextArea) e.getSource(), e.getX(), e.getY());
                     }
                 }
             });

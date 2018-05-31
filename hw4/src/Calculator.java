@@ -48,7 +48,7 @@ public class Calculator extends JFrame
                         public void mouseClicked(MouseEvent e)
                         {
                             textField.setText(Solver.conversion(textField.getText()));
-                            ok = true;
+//                            ok = true;
                         }
                     });
                     break;
@@ -66,7 +66,7 @@ public class Calculator extends JFrame
 
     public static void main(String[] args)
     {
-        Calculator calculator = new Calculator();
+        new Calculator();
     }
 
     class ButtonMouseAdapter extends MouseAdapter

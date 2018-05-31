@@ -8,7 +8,6 @@ import java.util.Calendar;
  */
 public class PIMCalendar extends JFrame
 {
-    private String[] date;
     private User user = null;
     private RemotePIMCollection remotePIMCollection = new RemotePIMCollectionWithFile();
     private CalendarPanel calendarPanel = new CalendarPanel(remotePIMCollection);
@@ -17,7 +16,6 @@ public class PIMCalendar extends JFrame
     public PIMCalendar(String[] date)
     {
         super();
-        this.date = date;
 
         this.setSize(800, 600);
 
@@ -220,7 +218,9 @@ class PIMToolBar extends JToolBar
                 JLabel usernameLabel = new JLabel("username");
                 JLabel passwordLabel = new JLabel("password");
                 JTextField usernameTextField = new JTextField();
+                usernameTextField.setText("user1");
                 JTextField passwordTextField = new JPasswordField();
+                passwordTextField.setText("user1");
 
                 loginPanel.add(usernameLabel);
                 loginPanel.add(usernameTextField);

@@ -10,6 +10,16 @@ public class User implements Serializable
     private String username;
     private String password;
 
+    public User(String username, String password)
+    {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User()
+    {
+    }
+
     public String getUsername()
     {
         return username;
@@ -57,7 +67,8 @@ public class User implements Serializable
         {
             e.printStackTrace();
         }
-        return null;
+//        return null;
+        return new User(username, password);
     }
 
     public static void main(String[] args) throws Exception
