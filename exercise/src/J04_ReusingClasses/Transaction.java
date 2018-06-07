@@ -11,7 +11,14 @@ public class Transaction
     private double money;
     private boolean state = false;
 
-    public Transaction(BankAccount bankAccount, Operation operation, double money)
+    public static Transaction createTransaction(BankAccount bankAccount, Operation operation, double money)
+    {
+        Transaction transaction = new Transaction(bankAccount, operation, money);
+        transaction.work();
+        return transaction;
+    }
+
+    private Transaction(BankAccount bankAccount, Operation operation, double money)
     {
         this.date = new Date();
         this.bankAccount = bankAccount;
@@ -19,7 +26,7 @@ public class Transaction
         this.money = money;
     }
 
-    public void work() throws IllegalArgumentException
+    private void work() throws IllegalArgumentException
     {
         switch (operation)
         {
@@ -35,12 +42,12 @@ public class Transaction
     @Override
     public String toString()
     {
-        return (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").format(this.date)) + " "
-                + this.bankAccount.getType() + " "
-                + this.bankAccount.getName() + " "
-                + this.operation + " "
-                + this.money + " state: " +
-                state + "\tbalance: "
-                + this.bankAccount.getBalance();
+        return (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").format(this.date)) + " " +
+                this.bankAccount.getType() + " " +
+                this.bankAccount.getName() + " " +
+                this.operation + " " +
+                this.money + " state: " +
+                state + "\tbalance: " +
+                this.bankAccount.getBalance();
     }
 }

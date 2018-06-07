@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90261b5d-c64b-480d-95c8-853ba928e6eb" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transactions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hwGUI/src/InfoFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hwGUI/src/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw4/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw4/src/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hwGUI/src/CalendarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/hwGUI/src/CalendarPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hwGUI/src/PIMCalendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/hwGUI/src/PIMCalendar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hwGUI/src/PIMEntityPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hwGUI/src/RemotePIMCollectionWithFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/hwGUI/src/RemotePIMCollectionWithFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hwGUI/src/ShowPIMEntityPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/hwGUI/src/ShowPIMEntityPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hwGUI/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hwGUI/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/src/exam/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/src/exam/Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,56 +36,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PIMCollection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/PIMCollection.java">
+      <file leaf-file-name="Transaction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1900">
-              <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
+            <state relative-caret-position="800">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PIMCalendar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMCalendar.java">
+      <file leaf-file-name="Transactions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transactions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw4/src/Calculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw4/src/Solver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowPIMEntityPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwGUI/src/ShowPIMEntityPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditPIMEntityFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+            <state relative-caret-position="50">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,29 +57,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dateable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/src/Dateable.java">
+      <file leaf-file-name="BankSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="105">
+              <caret line="66" column="66" lean-forward="true" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
+              <folding>
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalendarPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hwGUI/src/CalendarPanel.java">
+      <file leaf-file-name="TestBankSystem.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="216" column="123" lean-forward="true" selection-start-line="216" selection-start-column="123" selection-end-line="216" selection-end-column="123" />
+            <state relative-caret-position="175">
+              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwGUI/src/User.java">
+      <file leaf-file-name="BankType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+            <state relative-caret-position="100">
+              <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CashAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+              <folding>
+                <element signature="e#176#177#0" expanded="true" />
+                <element signature="e#203#204#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#570#571#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+              <folding>
+                <element signature="e#178#179#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BankAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckingAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-70">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#180#181#0" expanded="true" />
+                <element signature="e#214#215#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,10 +161,16 @@
       <find>getCom</find>
       <find>&lt;&lt; 1</find>
       <find>login</find>
+      <find>new</find>
+      <find>add</find>
+      <find>&quot;add&quot;</find>
+      <find>lastmo</find>
+      <find>条目</find>
     </findStrings>
     <replaceStrings>
       <replace>bSlider</replace>
       <replace>entityShowPanel</replace>
+      <replace>字段</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -140,14 +179,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hwGUI/src/PIMEntity.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/PIMCollection.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/AddPIMEntityPanel.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/PIMNote.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/PIMContact.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/Dateable.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/PIMTodo.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/PIMAppointment.java" />
         <option value="$PROJECT_DIR$/test/src/inherit/Test.java" />
         <option value="$PROJECT_DIR$/test/src/inherit/Test1.java" />
         <option value="$PROJECT_DIR$/test/src/inherit/Test2.java" />
@@ -164,33 +199,37 @@
         <option value="$PROJECT_DIR$/test/src/producer_consumer/demo/ProducerConsumerDemo5.java" />
         <option value="$PROJECT_DIR$/test/src/producer_consumer/demo/ProducerConsumerDemo6.java" />
         <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Operation.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java" />
         <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankType.java" />
         <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Test.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java" />
-        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/AddPIMEntityFrame.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/PIMEntityPanel.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/RemotePIMCollection.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/RemotePIMCollectionWithFile.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java" />
         <option value="$PROJECT_DIR$/test/src/Test.java" />
         <option value="$PROJECT_DIR$/test/src/exam/Music.java" />
         <option value="$PROJECT_DIR$/test/src/exam/Leaf.java" />
         <option value="$PROJECT_DIR$/test/src/generic/Test.java" />
         <option value="$PROJECT_DIR$/test/src/exam/Equivalence.java" />
-        <option value="$PROJECT_DIR$/test/src/exam/Test.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/ShowPIMEntityPanel.java" />
         <option value="$PROJECT_DIR$/hw3/src/PIMCollection.java" />
         <option value="$PROJECT_DIR$/hw4/src/Calculator.java" />
         <option value="$PROJECT_DIR$/hw4/src/Solver.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/PIMCalendar.java" />
-        <option value="$PROJECT_DIR$/hwGUI/src/User.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/PIMAppointment.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/Starter.java" />
         <option value="$PROJECT_DIR$/hwGUI/src/CalendarPanel.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/InfoFrame.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/ShowPIMEntityPanel.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/PIMEntityPanel.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/User.java" />
+        <option value="$PROJECT_DIR$/test/src/exam/Test.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/RemotePIMCollectionWithFile.java" />
+        <option value="$PROJECT_DIR$/hwGUI/src/PIMCalendar.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transactions.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java" />
+        <option value="$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java" />
       </list>
     </option>
   </component>
@@ -204,9 +243,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="722" />
-    <option name="width" value="718" />
-    <option name="height" value="900" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,9 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,72 +263,28 @@
             <path>
               <item name="homework" type="b2602c69:ProjectViewProjectNode" />
               <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hw3" type="462c0819:PsiDirectoryNode" />
+              <item name="exercise" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="homework" type="b2602c69:ProjectViewProjectNode" />
               <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hw3" type="462c0819:PsiDirectoryNode" />
+              <item name="exercise" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="homework" type="b2602c69:ProjectViewProjectNode" />
               <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hw4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hw4" type="462c0819:PsiDirectoryNode" />
+              <item name="exercise" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hwGUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hwGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hwGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CalendarPanel.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hwGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="PIMCalendar.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="exam" type="462c0819:PsiDirectoryNode" />
+              <item name="J04_ReusingClasses" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -309,6 +301,7 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\homework\exercise" />
       <recent name="D:\workspace\homework\hwGUI\src" />
       <recent name="D:\workspace\homework\hw3\src" />
     </key>
@@ -325,7 +318,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PIMCalendar">
+  <component name="RunManager" selected="Application.TestBankSystem">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -340,24 +333,19 @@
       <option name="PROGRAM_PARAMETERS" value="9 2018" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
-    <configuration name="RGB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.RGB" />
-      <module name="test" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Starter" />
+      <module name="hwGUI" />
+      <option name="PROGRAM_PARAMETERS" value="9 2018" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exam.Test" />
-      <module name="test" />
+    <configuration name="TestBankSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="J04_ReusingClasses.TestBankSystem" />
+      <module name="exercise" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exam.*" />
+          <option name="PATTERN" value="J04_ReusingClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -423,18 +411,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.PIMCalendar" />
-      <item itemvalue="Application.RGB" />
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.Calculator" />
       <item itemvalue="Application.User" />
+      <item itemvalue="Application.Starter" />
+      <item itemvalue="Application.TestBankSystem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestBankSystem" />
+        <item itemvalue="Application.Starter" />
         <item itemvalue="Application.PIMCalendar" />
-        <item itemvalue="Application.User" />
         <item itemvalue="Application.Calculator" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.RGB" />
+        <item itemvalue="Application.User" />
       </list>
     </recent_temporary>
   </component>
@@ -479,12 +467,13 @@
       <workItem from="1527233911132" duration="6888000" />
       <workItem from="1527298046042" duration="40272000" />
       <workItem from="1527688443961" duration="10646000" />
-      <workItem from="1527773517776" duration="2174000" />
+      <workItem from="1527773517776" duration="27828000" />
+      <workItem from="1528337790757" duration="21768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325575000" />
+    <option name="totallyTimeSpent" value="372997000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,7 +486,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
@@ -505,23 +493,23 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3289256" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36033058" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289256" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3553719" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32885906" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917355" weight="0.23298033" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917355" weight="0.2322239" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32561985" />
-      <window_info id="Structure" order="6" sideWeight="0.5008264" side_tool="true" weight="0.23676248" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32396695" />
+      <window_info id="Structure" order="6" sideWeight="0.5008264" side_tool="true" weight="0.23524962" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39768976" />
       <window_info id="Favorites" order="5" side_tool="true" weight="0.3290469" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3966942" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -534,189 +522,48 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Test.java" />
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="85" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/AddPIMEntityFrame.java" />
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMEntityPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2420">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding>
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#5709#5710#0" expanded="true" />
-            <element signature="e#5761#5762#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/awt/event/MouseEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="274" column="28" selection-start-line="274" selection-start-column="28" selection-end-line="274" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1115">
-          <caret line="1630" column="16" selection-start-line="1630" selection-start-column="16" selection-end-line="1630" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JPopupMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="929" column="16" selection-start-line="929" selection-start-column="16" selection-end-line="929" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/exam/Music.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-          <folding>
-            <element signature="e#5748#5749#0" expanded="true" />
-            <element signature="e#5784#5785#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="848" column="11" selection-start-line="848" selection-start-column="11" selection-end-line="848" selection-end-column="11" />
-          <folding>
-            <element signature="e#32532#32533#0" expanded="true" />
-            <element signature="e#32566#32567#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/awt/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="147" column="61" lean-forward="true" selection-start-line="147" selection-start-column="61" selection-end-line="147" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/java/awt/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="122" column="30" lean-forward="true" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/AbstractButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/exam/Leaf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,13 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="183" column="46" selection-start-line="183" selection-start-column="46" selection-end-line="183" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -818,28 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/exam/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="55" column="75" lean-forward="true" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hwGUI/src/RemotePIMCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/RemotePIMCollectionWithFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
-          <folding>
-            <element signature="e#4823#4824#0" expanded="true" />
-            <element signature="e#4867#4868#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -852,60 +674,281 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw3/src/PIMCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
+        <state>
           <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/src/Solver.java">
+    <entry file="jar://E:/Java/JDK/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        <state relative-caret-position="140">
+          <caret line="377" column="33" lean-forward="true" selection-start-line="377" selection-start-column="33" selection-end-line="377" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMCalendar.java">
+    <entry file="jar://E:/Java/JDK/src.zip!/java/math/BigInteger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="32">
+          <caret line="1223" column="22" selection-start-line="1223" selection-start-column="22" selection-end-line="1223" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/User.java">
+    <entry file="jar://E:/Java/JDK/src.zip!/java/math/BigDecimal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        <state relative-caret-position="400">
+          <caret line="286" column="37" lean-forward="true" selection-start-line="286" selection-start-column="37" selection-end-line="286" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="1781" column="6" lean-forward="true" selection-start-line="1781" selection-start-column="6" selection-end-line="1781" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/JDK/src.zip!/java/awt/GridLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="192" column="11" selection-start-line="192" selection-start-column="11" selection-end-line="192" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw4/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+        <state relative-caret-position="-745">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/ArithHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/src/Solver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1075">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2875">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/AbstractButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="2086" column="16" selection-start-line="2086" selection-start-column="16" selection-end-line="2086" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="122" column="62" lean-forward="true" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/JDK/src.zip!/javax/swing/JMenuItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="137" column="11" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="11" />
+          <folding>
+            <element signature="e#3251#3252#0" expanded="true" />
+            <element signature="e#3289#3290#0" expanded="true" />
+            <element signature="e#5457#5458#0" expanded="true" />
+            <element signature="e#5492#5493#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/Dateable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMEntityPanel.java" />
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMAppointment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/exam/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/RemotePIMCollectionWithFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3425">
+          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/Starter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/CalendarPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-368">
+          <caret line="189" column="15" lean-forward="true" selection-start-line="189" selection-start-column="15" selection-end-line="189" selection-end-column="15" />
+          <folding>
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1630#1631#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hwGUI/src/ShowPIMEntityPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="257">
+          <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding>
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java">
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/PIMCalendar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+        <state relative-caret-position="225">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/InfoFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-393">
+          <caret line="128" column="20" lean-forward="true" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwGUI/src/CalendarPanel.java">
+    <entry file="file://$PROJECT_DIR$/hwGUI/src/EditPIMEntityFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="216" column="123" lean-forward="true" selection-start-line="216" selection-start-column="123" selection-end-line="216" selection-end-column="123" />
+        <state relative-caret-position="-193">
+          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transactions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CheckingAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CreditAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/CashAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding>
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/BankSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="66" column="66" lean-forward="true" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
+          <folding>
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/src/J04_ReusingClasses/TestBankSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>

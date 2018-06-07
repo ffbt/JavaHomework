@@ -25,4 +25,6 @@ public abstract class BankAccount
     }
 
     public abstract String getType();
+
+    public abstract Transactions getTransactions();
 }

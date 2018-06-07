@@ -2,6 +2,14 @@ package J04_ReusingClasses;
 
 public class CheckingAccount extends BankAccount
 {
+    private Transactions transactions = new Transactions();
+
+    @Override
+    public Transactions getTransactions()
+    {
+        return transactions;
+    }
+
     public CheckingAccount()
     {
     }

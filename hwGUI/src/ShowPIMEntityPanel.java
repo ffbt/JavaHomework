@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 显示PIM项的面板
+ *
  * @author 范博涛 15130110029 565267339@qq.com
  */
 public class ShowPIMEntityPanel extends JPanel
@@ -17,6 +19,11 @@ public class ShowPIMEntityPanel extends JPanel
     private int size;
     private int index = 0;
 
+    /**
+     * 设置当前使用的用户
+     *
+     * @param user 当前使用的用户信息
+     */
     public void setUser(User user)
     {
         this.user = user;
@@ -24,17 +31,30 @@ public class ShowPIMEntityPanel extends JPanel
             this.reset(0);
     }
 
+    /**
+     * 设置当前显示的PIM项类型
+     *
+     * @param entity PIM项类型
+     */
     public void setEntity(String entity)
     {
         this.entity = entity;
     }
 
+    /**
+     * @param remotePIMCollection PIM项集合
+     */
     public ShowPIMEntityPanel(RemotePIMCollection remotePIMCollection)
     {
         super(new BorderLayout());
         this.remotePIMCollection = remotePIMCollection;
     }
 
+    /**
+     * 设置当前PIM项索引，重新显示PIM项
+     *
+     * @param index PIM项的索引
+     */
     public void reset(int index)
     {
         this.index = index;
@@ -42,6 +62,9 @@ public class ShowPIMEntityPanel extends JPanel
         this.set();
     }
 
+    /**
+     * 根据当前PIM项类型和当前索引显示PIM项内容
+     */
     public void set()
     {
         String username = (user == null) ? "" : user.getUsername();
@@ -97,13 +120,13 @@ public class ShowPIMEntityPanel extends JPanel
             {
                 if (e.getButton() == MouseEvent.BUTTON1)
                 {
-                    new EditPIMEntityFrame(entity, list.get(index), null);
+                    new EditPIMEntityFrame(entity, (PIMEntity) list.get(index), null);
                 }
                 else if (e.getButton() == MouseEvent.BUTTON3)
                 {
 //                        popupMenu.setLocation(e.getX(), e.getY());
 //                        popupMenu.setVisible(true);
-                    popupMenu.show((JTextArea)e.getSource(), e.getX(), e.getY());
+                    popupMenu.show((JTextArea) e.getSource(), e.getX(), e.getY());
                 }
             }
         });

@@ -6,6 +6,10 @@ import java.awt.event.MouseEvent;
 import java.util.Calendar;
 
 /**
+ * 日历及其操作按钮面板
+ * 本月项为白色背景
+ * 非本月项为灰色背景
+ *
  * @author 范博涛 15130110029 565267339@qq.com
  */
 public class CalendarPanel extends JPanel
@@ -24,6 +28,12 @@ public class CalendarPanel extends JPanel
     private RemotePIMCollection remotePIMCollection;
     private User user = null;
 
+    /**
+     * 根据日期设置日历
+     * 若日期为空，则日历设置为当前日期
+     *
+     * @param date 默认设置的日期，若为空，则默认为当前日期
+     */
     private void setCalendar(String[] date)
     {
         int month, year;
@@ -46,11 +56,21 @@ public class CalendarPanel extends JPanel
         calendar.set(Calendar.DATE, 1);
     }
 
+    /**
+     * 根据月份偏移量修改日历
+     *
+     * @param monthDelta 月份偏移量
+     */
     private void setCalendar(int monthDelta)
     {
         calendar.add(Calendar.MONTH, monthDelta);
     }
 
+    /**
+     * 设置当前使用的用户
+     *
+     * @param user 当前使用的用户信息
+     */
     public void setUser(User user)
     {
         this.user = user;
@@ -58,6 +78,11 @@ public class CalendarPanel extends JPanel
             this.reset(0);
     }
 
+    /**
+     * 修改当前日期，并将该日历面板添加到主界面上
+     *
+     * @param date 默认显示的日期
+     */
     public void set(String[] date)
     {
         setCalendar(date);
@@ -65,6 +90,11 @@ public class CalendarPanel extends JPanel
         addPIMEntity(showPanel);
     }
 
+    /**
+     * 根据月份偏移量重新显示该日历面板
+     *
+     * @param monthDelta 月份偏移量
+     */
     public void reset(int monthDelta)
     {
         setCalendar(monthDelta);
@@ -73,6 +103,11 @@ public class CalendarPanel extends JPanel
         addPIMEntity(showPanel);
     }
 
+    /**
+     * 将日历面板及其对应的具有时间属性的PIM项显示到主界面上
+     *
+     * @param showPanel 日历面板
+     */
     private void addPIMEntity(JPanel showPanel)
     {
         Calendar calendarTmp = Calendar.getInstance();
@@ -96,11 +131,14 @@ public class CalendarPanel extends JPanel
                 pimCollection = remotePIMCollection.getItemsForDate(calendarTmp.getTime(), user.getUsername());
             for (Object object : pimCollection)
                 stringBuilder.append(object.toString());
-            showPanel.add(new DateCell(calendarTmp, stringBuilder.toString(), calendarTmp.get(Calendar.MONTH) == month, pimCollection, remotePIMCollection, user, this));
+            showPanel.add(new DateCell(calendarTmp, stringBuilder.toString(), calendarTmp.get(Calendar.MONTH) == month, pimCollection));
             calendarTmp.add(Calendar.DATE, 1);
         }
     }
 
+    /**
+     * @param remotePIMCollection PIM项集合
+     */
     public CalendarPanel(RemotePIMCollection remotePIMCollection)
     {
         super(new BorderLayout());
@@ -118,39 +156,56 @@ public class CalendarPanel extends JPanel
         this.add(titlePanel, BorderLayout.NORTH);
         this.add(showPanel, BorderLayout.CENTER);
     }
-}
 
-class DateCell extends JPanel
-{
-    public DateCell(Calendar calendar, String text, boolean currentMonth, PIMCollection pimCollection, RemotePIMCollection remotePIMCollection, User user, CalendarPanel calendarPanel)
+    /**
+     * 日期单元格
+     */
+    private class DateCell extends JPanel
     {
-        super(new BorderLayout());
-        JTextField titleTextField = new TitleTextField((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
-        titleTextField.setBackground(Color.LIGHT_GRAY);
-        titleTextField.setBorder(new LineBorder(Color.GRAY));
-
-        JTextArea infoTextArea = new InfoTextArea(text);
-        Calendar calendarTmp = Calendar.getInstance();
-        calendarTmp.setTime(calendar.getTime());
-        infoTextArea.addMouseListener(new MouseAdapter()
+        /**
+         * 以上面为日期，下面为内容初始化日期单元格
+         *
+         * @param calendar      单元格的日期
+         * @param text          单元格的内容
+         * @param currentMonth  是否为当前月
+         * @param pimCollection 属于该单元格的PIM项集合
+         */
+        public DateCell(Calendar calendar, String text, boolean currentMonth, PIMCollection pimCollection)
         {
-            @Override
-            public void mouseClicked(MouseEvent e)
-            {
-                new InfoFrame(e.getXOnScreen(), e.getYOnScreen(), pimCollection, calendarTmp, remotePIMCollection, user, calendarPanel);
-            }
-        });
-        if (!currentMonth)
-            infoTextArea.setBackground(Color.LIGHT_GRAY);
+            super(new BorderLayout());
+            JTextField titleTextField = new TitleTextField((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
+            titleTextField.setBackground(Color.LIGHT_GRAY);
+            titleTextField.setBorder(new LineBorder(Color.GRAY));
 
-        this.add(titleTextField, BorderLayout.NORTH);
+            JTextArea infoTextArea = new InfoTextArea(text);
+            Calendar calendarTmp = Calendar.getInstance();
+            calendarTmp.setTime(calendar.getTime());
+            infoTextArea.addMouseListener(new MouseAdapter()
+            {
+                @Override
+                public void mouseClicked(MouseEvent e)
+                {
+                    new InfoFrame(e.getXOnScreen(), e.getYOnScreen(), pimCollection, calendarTmp, remotePIMCollection, user, CalendarPanel.this);
+                }
+            });
+            if (!currentMonth)
+                infoTextArea.setBackground(Color.LIGHT_GRAY);
+
+            this.add(titleTextField, BorderLayout.NORTH);
 //        this.add(infoTextArea, BorderLayout.CENTER);
-        this.add(new JScrollPane(infoTextArea), BorderLayout.CENTER);
+            this.add(new JScrollPane(infoTextArea), BorderLayout.CENTER);
+        }
     }
 }
 
+/**
+ * 标题显示格式
+ */
 class TitleTextField extends JTextField
 {
+    /**
+     * @param text 标题名称
+     */
     public TitleTextField(String text)
     {
         super(text);
@@ -160,8 +215,14 @@ class TitleTextField extends JTextField
     }
 }
 
+/**
+ * 信息域显示格式
+ */
 class InfoTextArea extends JTextArea
 {
+    /**
+     * @param text 显示内容
+     */
     public InfoTextArea(String text)
     {
         super(text);
@@ -169,143 +230,5 @@ class InfoTextArea extends JTextArea
         this.setEditable(false);
         this.setBorder(new LineBorder(Color.GRAY));
         this.setLineWrap(true);
-    }
-}
-
-class InfoFrame extends JFrame
-{
-    private static final String[] pimEntityStrings = {"todos", "notes", "contacts", "appointments"};
-    private PIMCollection pimCollection;
-    private JPanel showPanel = new JPanel();
-    private CalendarPanel calendarPanel;
-    private RemotePIMCollection remotePIMCollection;
-    private JScrollPane scrollPane = new JScrollPane(showPanel);
-
-    private void set()
-    {
-        int textAreaNum = pimCollection.size();
-        showPanel.setLayout(new GridLayout(textAreaNum, 1));
-
-        for (Object o : pimCollection)
-        {
-            JTextArea infoTextArea = new InfoTextArea(o.toString());
-            JPopupMenu popupMenu = new JPopupMenu();
-            JMenuItem menuItem = new JMenuItem("delete");
-            InfoFrame infoFrame = this;
-            menuItem.addActionListener(e ->
-            {
-                pimCollection.remove(o);
-                remotePIMCollection.remove(o);
-                reset();
-                infoFrame.validate();
-                calendarPanel.reset(0);
-                calendarPanel.getRootPane().getParent().validate();
-            });
-            popupMenu.add(menuItem);
-            infoTextArea.addMouseListener(new MouseAdapter()
-            {
-                @Override
-                public void mouseClicked(MouseEvent e)
-                {
-                    if (e.getButton() == MouseEvent.BUTTON1)
-                    {
-                        EditPIMEntityFrame editPIMEntityFrame;
-                        if (o instanceof PIMTodo)
-                            editPIMEntityFrame = new EditPIMEntityFrame("todos", o, calendarPanel);
-                        else
-                            editPIMEntityFrame = new EditPIMEntityFrame("appointments", o, calendarPanel);
-                        editPIMEntityFrame.setInfoFrame((InfoFrame) ((JTextArea) e.getSource()).getRootPane().getParent());
-                    }
-                    else if (e.getButton() == MouseEvent.BUTTON3)
-                    {
-//                        popupMenu.setLocation(e.getX(), e.getY());
-//                        popupMenu.setVisible(true);
-                        popupMenu.show((JTextArea) e.getSource(), e.getX(), e.getY());
-                    }
-                }
-            });
-            showPanel.add(infoTextArea);
-        }
-    }
-
-    public void reset()
-    {
-        showPanel.removeAll();
-        set();
-    }
-
-    public InfoFrame(int x, int y, PIMCollection pimCollection, Calendar calendar, RemotePIMCollection remotePIMCollection, User user, CalendarPanel calendarPanel)
-    {
-        super((calendar.get(Calendar.MONTH) + 1) + "." + calendar.get(Calendar.DATE));
-        this.pimCollection = pimCollection;
-        this.calendarPanel = calendarPanel;
-        this.remotePIMCollection = remotePIMCollection;
-
-        set();
-
-        JPanel optionPanel = new JPanel(new GridLayout(1, 2));
-        optionPanel.setPreferredSize(new Dimension(this.getWidth(), 30));
-
-        JLabel addLabel = new JLabel("add");
-
-        JComboBox comboBox = getJComboBox(calendar, remotePIMCollection, user, calendarPanel, pimCollection);
-
-        optionPanel.add(addLabel);
-        optionPanel.add(comboBox);
-
-        this.add(optionPanel, BorderLayout.SOUTH);
-        this.add(scrollPane, BorderLayout.CENTER);
-
-        this.setSize(400, 300);
-
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); // 获取屏幕大小
-        if (x + this.getWidth() > screenSize.width)
-            x = screenSize.width - this.getWidth();
-        if (y + this.getHeight() > screenSize.height)
-            y = screenSize.height - this.getHeight();
-
-        this.setLocation(x, y);
-        this.setVisible(true);
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    // 只关闭该frame
-    }
-
-    private JComboBox getJComboBox(Calendar calendar, RemotePIMCollection remotePIMCollection, User user, CalendarPanel calendarPanel, PIMCollection pimCollection)
-    {
-        if (calendar == null)
-            calendar = Calendar.getInstance();
-
-        final Calendar calendarFinal = calendar;
-
-        JComboBox comboBox = new JComboBox(pimEntityStrings);
-        comboBox.addActionListener(e ->
-        {
-            PIMEntity pimEntity = null;
-            String entity = ((JComboBox) e.getSource()).getSelectedItem().toString();
-            switch (entity)
-            {
-                case "todos":
-                    pimEntity = new PIMTodo();
-                    ((PIMTodo) pimEntity).setDate(calendarFinal.getTime());
-                    break;
-                case "notes":
-                    pimEntity = new PIMNote();
-                    break;
-                case "contacts":
-                    pimEntity = new PIMContact();
-                    break;
-                case "appointments":
-                    pimEntity = new PIMAppointment();
-                    ((PIMAppointment) pimEntity).setDate(calendarFinal.getTime());
-                    break;
-                default:
-                    break;
-            }
-            pimEntity.setOwner(user == null ? null : user.getUsername());
-            remotePIMCollection.add(pimEntity);
-            pimCollection.add(pimEntity);
-            EditPIMEntityFrame editPIMEntityFrame = new EditPIMEntityFrame(entity, pimEntity, calendarPanel);
-            editPIMEntityFrame.setInfoFrame((InfoFrame) this.getRootPane().getParent());
-        });
-        return comboBox;
     }
 }

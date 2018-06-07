@@ -6,13 +6,10 @@ import java.util.*;
 public class BankSystem
 {
     private Map<String, Map<BankType, BankAccount>> accountMap;
-    private Queue<Transaction> transactions;
-    private static final int transactionNum = 6;
 
     public BankSystem()
     {
         this.accountMap = new HashMap<>();
-        this.transactions = new LinkedList<>();
     }
 
     public boolean createAccount(String name, BankType bankType) throws IllegalArgumentException
@@ -33,7 +30,7 @@ public class BankSystem
                 BankAccount bankAccount = (BankAccount) accountConstructor.newInstance();
                 bankAccount.setName(name);
                 (this.accountMap.get(name)).put(bankType, bankAccount);
-                return bankAccount.deposit(balance);
+                return this.createTransaction(name, bankType, Operation.DEPOSIT, balance);
             }
         }
         catch (Exception e)
@@ -43,26 +40,12 @@ public class BankSystem
         return false;
     }
 
-    public void outputTransaction()
-    {
-        for (Transaction transaction : transactions)
-            System.out.println(transaction);
-    }
-
-    private void addTransaction(Transaction transaction)
-    {
-        if (this.transactions.size() == transactionNum)
-            this.transactions.poll();
-        this.transactions.offer(transaction);
-    }
-
     public boolean createTransaction(String name, BankType bankType, Operation operation, double money) throws IllegalArgumentException
     {
         if (!this.accountMap.containsKey(name) || !(this.accountMap.get(name)).containsKey(bankType))
             return false;
-        Transaction transaction = new Transaction((this.accountMap.get(name)).get(bankType), operation, money);
-        transaction.work();
-        this.addTransaction(transaction);
+        Transaction transaction = Transaction.createTransaction((this.accountMap.get(name)).get(bankType), operation, money);
+        (this.accountMap.get(name)).get(bankType).getTransactions().add(transaction);
         return true;
     }
 
@@ -76,5 +59,20 @@ public class BankSystem
         this.accountMap.remove(oldName);
         this.accountMap.put(newName, map);
         return true;
+    }
+
+    public int getAccountNum()
+    {
+        int num = 0;
+        for (Map<BankType, BankAccount> map : accountMap.values())
+            num += map.size();
+        return num;
+    }
+
+    public void printTransactions(String name, BankType bankType)
+    {
+        if (!this.accountMap.containsKey(name) || !(this.accountMap.get(name)).containsKey(bankType))
+            return;
+        (this.accountMap.get(name)).get(bankType).getTransactions().print();
     }
 }

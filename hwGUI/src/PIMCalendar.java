@@ -4,6 +4,10 @@ import java.awt.event.*;
 import java.util.Calendar;
 
 /**
+ * 主界面
+ * 显示日历及其相关操作按钮
+ * 标题显示当前操作状态
+ *
  * @author 范博涛 15130110029 565267339@qq.com
  */
 public class PIMCalendar extends JFrame
@@ -12,7 +16,13 @@ public class PIMCalendar extends JFrame
     private RemotePIMCollection remotePIMCollection = new RemotePIMCollectionWithFile();
     private CalendarPanel calendarPanel = new CalendarPanel(remotePIMCollection);
     private ShowPIMEntityPanel showPIMEntityPanel = new ShowPIMEntityPanel(remotePIMCollection);
+    private PIMToolBar pimToolBar = new PIMToolBar(this);
 
+    /**
+     * 根据日期初始化主界面
+     *
+     * @param date 默认提供的日期
+     */
     public PIMCalendar(String[] date)
     {
         super();
@@ -21,10 +31,12 @@ public class PIMCalendar extends JFrame
 
         addMenuBar();
 
-        this.add(new PIMToolBar(this), BorderLayout.NORTH);     // 0
+        this.add(pimToolBar, BorderLayout.NORTH);     // 0
         this.add(calendarPanel, BorderLayout.CENTER);       // 1
 
         calendarPanel.set(date);
+
+//        pimToolBar.setEnabled();
 
         this.addWindowListener(new WindowAdapter()
         {
@@ -38,6 +50,11 @@ public class PIMCalendar extends JFrame
         this.setVisible(true);
     }
 
+    /**
+     * 设置当前使用的用户
+     *
+     * @param user 当前使用的用户信息
+     */
     public void setUser(User user)
     {
         this.user = user;
@@ -46,26 +63,61 @@ public class PIMCalendar extends JFrame
         this.validate();
     }
 
+    /**
+     * 返回当前用户
+     *
+     * @return 当前用户
+     */
     public User getUser()
     {
         return user;
     }
 
+    /**
+     * 返回PIM项集合
+     *
+     * @return PIM项集合
+     */
     public RemotePIMCollection getRemotePIMCollection()
     {
         return remotePIMCollection;
     }
 
+    /**
+     * 返回主界面日历面板
+     *
+     * @return 主界面日历面板
+     */
     public CalendarPanel getCalendarPanel()
     {
         return calendarPanel;
     }
 
+    /**
+     * 返回主界面展示PIM项的面板
+     *
+     * @return 主界面PIM项面板
+     */
     public ShowPIMEntityPanel getShowPIMEntityPanel()
     {
         return showPIMEntityPanel;
     }
 
+    /**
+     * 返回主界面工具栏
+     *
+     * @return 主界面工具栏
+     */
+    public PIMToolBar getPimToolBar()
+    {
+        return pimToolBar;
+    }
+
+    /**
+     * 将菜单栏添加到界面上
+     * view: 浏览日历和PIM项
+     * new: 新建PIM项
+     */
     private void addMenuBar()
     {
         JMenuBar menuBar = new JMenuBar();
@@ -86,125 +138,151 @@ public class PIMCalendar extends JFrame
         menuBar.add(newMenu);
         this.setJMenuBar(menuBar);
     }
-
-    public static void main(String[] args)
-    {
-        new PIMCalendar(args);
-    }
 }
 
-class CalendarActionListener implements ActionListener
-{
-    private PIMCalendar pimCalendar;
-
-    public CalendarActionListener(PIMCalendar pimCalendar)
-    {
-        this.pimCalendar = pimCalendar;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        if (pimCalendar.getContentPane().getComponent(1) != null)
-            pimCalendar.getContentPane().remove(1);
-        pimCalendar.add(pimCalendar.getCalendarPanel(), BorderLayout.CENTER);
-        ((CalendarPanel) pimCalendar.getContentPane().getComponent(1)).reset(0);
-        pimCalendar.validate();
-    }
-}
-
-class ShowPIMEntityActionListener implements ActionListener
-{
-    private PIMCalendar pimCalendar;
-
-    public ShowPIMEntityActionListener(PIMCalendar pimCalendar)
-    {
-        this.pimCalendar = pimCalendar;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        if (pimCalendar.getContentPane().getComponent(1) != null)
-            pimCalendar.getContentPane().remove(1);
-        ShowPIMEntityPanel showPIMEntityPanel = pimCalendar.getShowPIMEntityPanel();
-        showPIMEntityPanel.setEntity(e.getActionCommand());
-        pimCalendar.add(showPIMEntityPanel);
-        showPIMEntityPanel.reset(0);
-        pimCalendar.validate();
-    }
-}
-
-class AddPIMEntityActionListener implements ActionListener
-{
-    private PIMCalendar pimCalendar;
-
-    public AddPIMEntityActionListener(PIMCalendar pimCalendar)
-    {
-        this.pimCalendar = pimCalendar;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        RemotePIMCollection remotePIMCollection = pimCalendar.getRemotePIMCollection();
-        User user = pimCalendar.getUser();
-        PIMEntity pimEntity = null;
-        Calendar calendar = Calendar.getInstance();
-        String entity = e.getActionCommand() + "s";
-        switch (entity)
-        {
-            case "todos":
-                pimEntity = new PIMTodo();
-                ((PIMTodo) pimEntity).setDate(calendar.getTime());
-                break;
-            case "notes":
-                pimEntity = new PIMNote();
-                break;
-            case "contacts":
-                pimEntity = new PIMContact();
-                break;
-            case "appointments":
-                pimEntity = new PIMAppointment();
-                ((PIMAppointment) pimEntity).setDate(calendar.getTime());
-                break;
-            default:
-                break;
-        }
-        pimEntity.setOwner(user == null ? null : user.getUsername());
-        remotePIMCollection.add(pimEntity);
-        new EditPIMEntityFrame(entity, pimEntity, pimCalendar.getCalendarPanel());
-    }
-}
-
+/**
+ * 设置菜单项及其监听事件
+ */
 class PIMMenuItem extends JMenuItem
 {
+    private PIMCalendar pimCalendar;
+
+    /**
+     * 设置修改主界面的菜单项
+     *
+     * @param text        菜单项名字
+     * @param pimCalendar 调用的主界面
+     */
     public PIMMenuItem(String text, PIMCalendar pimCalendar)
     {
         super(text);
 
+        this.pimCalendar = pimCalendar;
+
         switch (text)
         {
             case "calendar":
-                this.addActionListener(new CalendarActionListener(pimCalendar));
+                this.addActionListener(new CalendarActionListener());
                 break;
             case "todos":
             case "contacts":
             case "notes":
             case "appointments":
-                this.addActionListener(new ShowPIMEntityActionListener(pimCalendar));
+                this.addActionListener(new ShowPIMEntityActionListener());
                 break;
             case "todo":
             case "contact":
             case "note":
             case "appointment":
-                this.addActionListener(new AddPIMEntityActionListener(pimCalendar));
+                this.addActionListener(new AddPIMEntityActionListener());
+        }
+    }
+
+    /**
+     * 浏览日历选项监听事件
+     */
+    private class CalendarActionListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            pimCalendar.getPimToolBar().setSwitchMonthEnabled();
+            if (pimCalendar.getContentPane().getComponent(1) != null)
+                pimCalendar.getContentPane().remove(1);
+            pimCalendar.add(pimCalendar.getCalendarPanel(), BorderLayout.CENTER);
+            ((CalendarPanel) pimCalendar.getContentPane().getComponent(1)).reset(0);
+            pimCalendar.validate();
+        }
+    }
+
+    /**
+     * 浏览PIM项监听事件
+     */
+    private class ShowPIMEntityActionListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            pimCalendar.getPimToolBar().setSwitchMonthDisabled();
+            if (pimCalendar.getContentPane().getComponent(1) != null)
+                pimCalendar.getContentPane().remove(1);
+            ShowPIMEntityPanel showPIMEntityPanel = pimCalendar.getShowPIMEntityPanel();
+            showPIMEntityPanel.setEntity(e.getActionCommand());
+            pimCalendar.add(showPIMEntityPanel);
+            showPIMEntityPanel.reset(0);
+            pimCalendar.validate();
+        }
+    }
+
+    /**
+     * 添加PIM项监听事件
+     */
+    private class AddPIMEntityActionListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            RemotePIMCollection remotePIMCollection = pimCalendar.getRemotePIMCollection();
+            User user = pimCalendar.getUser();
+            PIMEntity pimEntity = null;
+            Calendar calendar = Calendar.getInstance();
+            String entity = e.getActionCommand() + "s";
+            switch (entity)
+            {
+                case "todos":
+                    pimEntity = new PIMTodo();
+                    ((PIMTodo) pimEntity).setDate(calendar.getTime());
+                    break;
+                case "notes":
+                    pimEntity = new PIMNote();
+                    break;
+                case "contacts":
+                    pimEntity = new PIMContact();
+                    break;
+                case "appointments":
+                    pimEntity = new PIMAppointment();
+                    ((PIMAppointment) pimEntity).setDate(calendar.getTime());
+                    break;
+                default:
+                    break;
+            }
+            pimEntity.setOwner(user == null ? null : user.getUsername());
+            pimEntity.setPublic(user == null);
+            remotePIMCollection.add(pimEntity);
+            new EditPIMEntityFrame(entity, pimEntity, pimCalendar.getCalendarPanel());
         }
     }
 }
 
+/**
+ * 设置工具栏及其监听事件
+ * login: 登录
+ * last month: 浏览上一月的日历
+ * next month: 浏览下一月的日历
+ */
 class PIMToolBar extends JToolBar
 {
+    private JButton lastMonth = new JButton("last month");
+    private JButton nextMonth = new JButton("next month");
+
+    /**
+     * 启用月份切换按钮
+     */
+    public void setSwitchMonthEnabled()
+    {
+        lastMonth.setEnabled(true);
+        nextMonth.setEnabled(true);
+    }
+
+    /**
+     * 禁用月份切换按钮
+     */
+    public void setSwitchMonthDisabled()
+    {
+        lastMonth.setEnabled(false);
+        nextMonth.setEnabled(false);
+    }
+
     public PIMToolBar(PIMCalendar pimCalendar)
     {
         JButton loginButton = new JButton("login");
@@ -257,26 +335,30 @@ class PIMToolBar extends JToolBar
         });
         this.add(loginButton);
 
-        JButton lastMonth = new JButton("last month");
         lastMonth.addMouseListener(new MouseAdapter()
         {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                ((CalendarPanel) pimCalendar.getContentPane().getComponent(1)).reset(-1);
-                pimCalendar.validate(); // 刷新frame
+                if (((JButton) e.getSource()).isEnabled())
+                {
+                    ((CalendarPanel) pimCalendar.getContentPane().getComponent(1)).reset(-1);
+                    pimCalendar.validate(); // 刷新frame
+                }
             }
         });
         this.add(lastMonth);
 
-        JButton nextMonth = new JButton("next month");
         nextMonth.addMouseListener(new MouseAdapter()
         {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                ((CalendarPanel) pimCalendar.getContentPane().getComponent(1)).reset(1);
-                pimCalendar.validate();
+                if (((JButton) e.getSource()).isEnabled())
+                {
+                    ((CalendarPanel) pimCalendar.getContentPane().getComponent(1)).reset(1);
+                    pimCalendar.validate();
+                }
             }
         });
         this.add(nextMonth);

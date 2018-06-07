@@ -1,7 +1,9 @@
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * 通过读写文件实现RemotePIMCollection接口
+ */
 public class RemotePIMCollectionWithFile implements RemotePIMCollection
 {
     private PIMCollection pimCollection = new PIMCollection();
@@ -26,6 +28,9 @@ public class RemotePIMCollectionWithFile implements RemotePIMCollection
         }
     }
 
+    /**
+     * 从文件中反序列化类
+     */
     private void read()
     {
         File file = new File("list.txt");
@@ -41,6 +46,9 @@ public class RemotePIMCollectionWithFile implements RemotePIMCollection
         }
     }
 
+    /**
+     * 将对象序列化到文件
+     */
     public void write()
     {
         File file = new File("list.txt");

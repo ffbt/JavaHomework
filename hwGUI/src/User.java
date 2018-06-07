@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 用户信息
+ *
  * @author 范博涛 15130110029 565267339@qq.com
  */
 public class User implements Serializable
@@ -10,6 +12,10 @@ public class User implements Serializable
     private String username;
     private String password;
 
+    /**
+     * @param username 用户名
+     * @param password 密码
+     */
     public User(String username, String password)
     {
         this.username = username;
@@ -40,6 +46,13 @@ public class User implements Serializable
         this.password = password;
     }
 
+    /**
+     * 验证用户信息
+     *
+     * @param username 用户名
+     * @param password 密码
+     * @return 若验证成功，返回User对象，否则返回null
+     */
     public static User verify(String username, String password)
     {
         File file = new File("user.txt");
@@ -54,10 +67,10 @@ public class User implements Serializable
                 e.printStackTrace();
             }
         }
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file)))
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file)))
         {
             User user;
-            while ((user = (User)ois.readObject()) != null)
+            while ((user = (User) ois.readObject()) != null)
             {
                 if (user.getUsername().equals(username) && user.getPassword().equals(password))
                     return user;
